@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if post.is_updated %}
+
+<div><h2>{{ post.title }}(edit)</h2></div>
+<p>{{ post.body }}</p>
+
+{% else %}
+
+<h2>{{ post.title }}</h2>
+<p>{{ post.body }}</p>
+
+{% endif %}
+
+<p>Magical as fuck</p>
+<br>
+
+<a href="{% url 'post_update' post.pk %}">+ Edit Blog Post</a>
+<a href="{% url 'post_delete' post.pk %}">+ Delete Blog Post</a>
+
+{% endblock content %}
